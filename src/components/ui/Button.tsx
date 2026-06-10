@@ -14,9 +14,9 @@ export const Button = ({
   ...props 
 }: ButtonProps) => {
   const variants = {
-    primary: "bg-secondary text-white shadow-lg shadow-secondary/20 hover:bg-secondary/90",
-    secondary: "bg-slate-800 text-white hover:bg-slate-700 border border-slate-700",
-    outline: "glass-panel text-white hover:bg-slate-800 border border-white/10",
+    primary: "bg-emerald-500 text-white shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 focus-visible:ring-2 focus-visible:ring-emerald-300/40",
+    secondary: "bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 focus-visible:ring-2 focus-visible:ring-slate-500/40",
+    outline: "border border-white/10 bg-transparent text-white hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-emerald-300/30",
     ghost: "text-slate-400 hover:text-white"
   };
 

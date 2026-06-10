@@ -1,62 +1,50 @@
 import { Icon } from '../ui/Icon';
-import { cn } from '../../lib/utils';
 
 const FEATURE_DATA = [
   {
     id: 'gis',
-    title: 'Interactive GIS Mapping',
-    desc: 'Powered by Mapbox for real-time spatial visualization. Layer multi-source data including population density and transport networks.',
-    icon: 'layers',
-    size: 'large',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1z6LLH1f1pcn9YT7a-CG4XvkRxVnmdt9-SWDZQHKyBGqm5iNCmL_ol0QmBLTBiekw7ke4OzKYfexawpJZzFcE7ZrFvvAAXCivxafdvAnjmpHhIfR6Dtijg-AhP0HUHXfOlrt7YjTcEpd-oj6bozbyRxD5GJooP_ADRFyQzyiS84PNKoX2KaSiWC_qLTaMGE4K9wQz5PT5EnBaLS4jWmRGSn18vl0iw8GFUY1KTjGpEGRqVz8tijNkSnRd5eF9llwMQLNxPfq4Uw0'
+    title: 'Interactive GIS mapping',
+    desc: 'Visualize geographic coverage instantly with layers for population, transport, and facility access.',
+    icon: 'layers'
   },
   {
     id: 'heatmaps',
-    title: 'Accessibility Heatmaps',
-    desc: 'Color-coded coverage analysis (Green, Yellow, Red) using gravity models to determine where help is needed most.',
-    icon: 'texture',
-    size: 'tall',
+    title: 'Accessibility heatmaps',
+    desc: 'Identify underserved communities with color-coded risk zones and resource gap scores.',
+    icon: 'heat_map'
   },
   {
-    id: 'ai',
-    title: 'Recommendation Engine',
-    desc: 'Population-aware suggestions for new facilities. AI suggests impactful locations to maximize community health outcomes.',
-    icon: 'auto_awesome',
-    size: 'wide',
+    id: 'recommendation',
+    title: 'Recommendation engine',
+    desc: 'Generate high-impact placement scenarios using predictive demand and equity signals.',
+    icon: 'auto_awesome'
   }
 ];
 
 export const Features = () => {
   return (
-    <section id="features" className="py-24 bg-[#0f172a]">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">Advanced GIS Toolset</h2>
-          <p className="text-lg text-slate-400">Leveraging cutting-edge spatial algorithms.</p>
+    <section id="features" className="py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <p className="inline-flex rounded-full bg-emerald-500/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">
+            Built for actionable planning
+          </p>
+          <h2 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Everything teams need to plan better healthcare access.
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-slate-400">
+            From real-time spatial analytics to predictive siting tools, this platform gives you the insight to close access gaps faster.
+          </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-6 max-w-6xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-3">
           {FEATURE_DATA.map((feature) => (
-            <div
-              key={feature.id}
-              className={cn(
-                "bg-slate-800/40 p-8 rounded-3xl border border-slate-700 group hover:shadow-xl transition-all flex flex-col",
-                feature.size === 'large' && "col-span-12 lg:col-span-8 h-[500px]",
-                feature.size === 'tall' && "col-span-12 lg:col-span-4 lg:row-span-2",
-                feature.size === 'wide' && "col-span-12 lg:col-span-8"
-              )}
-            >
-              <div className="w-14 h-14 rounded-2xl bg-slate-700 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Icon name={feature.icon} className="text-3xl" />
+            <div key={feature.id} className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-xl shadow-slate-950/10 transition hover:-translate-y-1 hover:border-emerald-500/20">
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-500/20">
+                <Icon name={feature.icon} className="text-2xl" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">{feature.title}</h3>
-              <p className="text-slate-400 mb-6">{feature.desc}</p>
-              
-              {feature.image && (
-                <div className="mt-auto h-48 rounded-2xl overflow-hidden border border-slate-700">
-                  <img src={feature.image} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Preview" />
-                </div>
-              )}
+              <h3 className="text-2xl font-semibold text-white mb-3">{feature.title}</h3>
+              <p className="text-slate-400 leading-7">{feature.desc}</p>
             </div>
           ))}
         </div>
