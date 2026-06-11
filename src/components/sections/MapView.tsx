@@ -268,7 +268,7 @@ export const MapView = () => {
               bearing: -10,
             }}
             style={{ width: '100%', height: '100%' }}
-            mapStyle="mapbox://styles/mapbox/dark-v11"
+            mapStyle="mapbox://styles/aaaranas/cmq8dc1r9009v01rfavkk0yy5"
             mapboxAccessToken={MAPBOX_TOKEN}
             interactiveLayerIds={['barangay-fill', 'barangay-extrusion']}
             onMouseMove={onMouseMove}

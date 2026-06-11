@@ -403,3 +403,18 @@ The system will:
 - Support evidence-based healthcare planning.
 - Recommend optimal locations for future healthcare facilities.
 
+---
+
+## Local development
+
+Create a local `.env` file from the example and add your Mapbox token:
+
+```bash
+cp .env.example .env
+# then edit .env and set VITE_MAPBOX_TOKEN to your token
+```
+
+The project reads the token from `import.meta.env.VITE_MAPBOX_TOKEN`. The `.env` file is ignored by git, so each developer must create their own local `.env`.
+
+If teammates run the dev server after creating `.env`, restart the dev server so Vite picks up the variable.
+
