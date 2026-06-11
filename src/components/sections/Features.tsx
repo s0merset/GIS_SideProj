@@ -1,23 +1,24 @@
-import { Icon } from '../ui/Icon';
+import { Layers, Flame, Sparkles } from 'lucide-react';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 const FEATURES = [
   {
     id: 'gis',
     title: 'Interactive GIS mapping',
     desc: 'Overlay population density, transport routes, and facility catchment areas on a live map — updated as conditions change.',
-    icon: 'layers',
+    icon: Layers,
   },
   {
     id: 'heatmaps',
     title: 'Accessibility heatmaps',
     desc: 'Color-coded risk zones reveal which communities are farthest from care and by how much, down to the barangay level.',
-    icon: 'heat_map',
+    icon: Flame,
   },
   {
     id: 'recommendation',
     title: 'Placement engine',
     desc: 'Model the impact of new facilities before committing resources, ranked by projected coverage improvement and equity gain.',
-    icon: 'auto_awesome',
+    icon: Sparkles,
   },
 ];
 
@@ -33,23 +34,23 @@ export const Features = () => (
         </h2>
       </div>
 
-      <div className="grid gap-px rounded-3xl border border-white/8 bg-white/8 overflow-hidden sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-3">
         {FEATURES.map((f, i) => (
-          <div
+          <Card
             key={f.id}
-            className="group flex flex-col gap-6 bg-[#060c18] p-8 transition-colors hover:bg-[#0a1628]"
+            className="rounded-3xl bg-[#060c18] ring-white/8 transition-colors hover:bg-[#0a1628]"
           >
-            <div className="flex items-center gap-4">
+            <CardHeader className="flex flex-row items-center justify-between">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 ring-1 ring-cyan-500/20">
-                <Icon name={f.icon} className="text-xl" />
+                <f.icon className="h-5 w-5" />
               </div>
               <span className="font-mono text-xs text-slate-600">0{i + 1}</span>
-            </div>
-            <div>
+            </CardHeader>
+            <CardContent>
               <h3 className="text-lg font-semibold text-white">{f.title}</h3>
               <p className="mt-3 text-sm leading-7 text-slate-500">{f.desc}</p>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </div>

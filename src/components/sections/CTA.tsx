@@ -1,4 +1,4 @@
-import { Button } from '../ui/Button';
+import { Button } from '@/components/ui/button';
 
 export const CTA = () => (
   <section className="bg-[#060c18] py-28">
@@ -19,13 +19,10 @@ export const CTA = () => (
         </p>
 
         <div className="relative mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button
-            size="lg"
-            className="bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20 hover:bg-cyan-400"
-          >
+          <Button size="lg" className="h-12 px-7 text-base shadow-lg shadow-cyan-500/20">
             Request a demo
           </Button>
-          <Button variant="outline" size="lg" className="border-white/10 text-slate-200 hover:bg-white/5">
+          <Button variant="outline" size="lg" className="h-12 px-7 text-base">
             Contact sales
           </Button>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button } from '../ui/Button';
 import { Shield, Menu, X } from 'lucide-react';
-import { cn } from '../../lib/utils';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export const Navbar = ({ scrolled }: { scrolled: boolean }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,20 +35,18 @@ export const Navbar = ({ scrolled }: { scrolled: boolean }) => {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button
-              size="sm"
-              className="hidden bg-cyan-500 text-slate-950 hover:bg-cyan-400 shadow-none md:flex"
-            >
+            <Button size="sm" className="hidden md:inline-flex">
               Get started
             </Button>
-            <button
-              type="button"
-              className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-slate-300 transition hover:bg-white/5 md:hidden"
+            <Button
+              variant="outline"
+              size="icon"
+              className="md:hidden"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-            </button>
+              {menuOpen ? <X /> : <Menu />}
+            </Button>
           </div>
         </div>
       </div>

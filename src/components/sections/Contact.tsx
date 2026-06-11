@@ -1,4 +1,11 @@
-import { Button } from '../ui/Button';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 export const Contact = () => (
   <section id="contact" className="bg-[#07101f] py-28">
@@ -17,28 +24,39 @@ export const Contact = () => (
         </div>
 
         <div className="flex flex-col gap-3">
-          <div className="rounded-2xl border border-white/8 bg-[#060c18] p-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Email</p>
-            <p className="mt-2 font-mono text-base text-white">hello@healthaccess.ai</p>
-          </div>
-          <div className="rounded-2xl border border-white/8 bg-[#060c18] p-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Office</p>
-            <p className="mt-2 font-mono text-base text-white">Manila, Philippines</p>
-          </div>
-          <div className="rounded-2xl border border-cyan-500/15 bg-cyan-500/5 p-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
-              Speak with sales
-            </p>
-            <p className="mt-2 mb-4 text-sm text-slate-400">
-              30-minute walkthrough, no commitment.
-            </p>
-            <Button
-              className="w-full bg-cyan-500 text-slate-950 hover:bg-cyan-400"
-              size="md"
-            >
-              Book a demo
-            </Button>
-          </div>
+          <Card className="rounded-2xl bg-[#060c18] ring-white/8">
+            <CardHeader>
+              <CardDescription className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+                Email
+              </CardDescription>
+              <CardTitle className="font-mono text-base text-white">
+                hello@healthaccess.ai
+              </CardTitle>
+            </CardHeader>
+          </Card>
+          <Card className="rounded-2xl bg-[#060c18] ring-white/8">
+            <CardHeader>
+              <CardDescription className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+                Office
+              </CardDescription>
+              <CardTitle className="font-mono text-base text-white">
+                Manila, Philippines
+              </CardTitle>
+            </CardHeader>
+          </Card>
+          <Card className="rounded-2xl bg-cyan-500/5 ring-cyan-500/15">
+            <CardHeader>
+              <CardDescription className="text-xs font-semibold uppercase tracking-widest text-cyan-400">
+                Speak with sales
+              </CardDescription>
+              <CardDescription className="text-sm text-slate-400">
+                30-minute walkthrough, no commitment.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button className="w-full">Book a demo</Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
